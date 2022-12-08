@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2017 at 10:53 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Generation Time: Dec 08, 2022 at 09:00 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,8 +40,11 @@ CREATE TABLE `accounts` (
 --
 
 INSERT INTO `accounts` (`id`, `client_id`, `balance`, `created_at`, `updated_at`) VALUES
-(1, 3, 0.1600000000000037, '2017-12-30 20:03:38', '2017-12-31 17:03:54'),
-(2, 4, 60.580000000000005, '2017-12-31 05:57:34', '2017-12-31 17:03:54');
+(1, 1, 100, '2022-12-08 00:41:13', '2022-12-08 00:41:13'),
+(2, 2, 100, '2022-12-08 00:41:30', '2022-12-08 00:41:30'),
+(3, 3, 100, '2022-12-08 00:42:48', '2022-12-08 00:42:48'),
+(4, 4, 1000, '2022-12-08 00:43:25', '2022-12-08 00:43:25'),
+(5, 5, 1000, '2022-12-08 00:43:58', '2022-12-08 00:43:58');
 
 -- --------------------------------------------------------
 
@@ -52,12 +54,12 @@ INSERT INTO `accounts` (`id`, `client_id`, `balance`, `created_at`, `updated_at`
 
 CREATE TABLE `clients` (
   `id` int(10) UNSIGNED NOT NULL,
-  `names` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `contact` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `secret_key` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `names` varchar(191) NOT NULL,
+  `contact` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `password` varchar(191) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
+  `secret_key` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -66,9 +68,12 @@ CREATE TABLE `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`id`, `names`, `contact`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 'Vincent Koech', '254702244756', 'vinukoech@gmail.com', '$2y$10$3WP0jgbVbxcaTbIVdmAcfuzZDFPFJmW.HL/ShEMeEYHrg7pE0mrBa', 'QX81gUuOZMBmACTogXvOoTDoNxYza1BK4kdZJ6JZtX5VPWlQemnmX3dUdwaS', '2017-12-30 20:03:38', '2017-12-30 20:03:38'),
-(4, 'Edison Koech', '254789765423', 'edisonanderson@gmail.com', '$2y$10$iqGlsPADLMYNOKRtFKdJJ.qFANk6yMp6vBz9NDBEGW1V8wQFTBm4G', '0LW8DlPB1zv1Wx7bF2q000B6tM9d1xbNu2pSAKMF6KDqRxc35WMnYOxw0NS1', '2017-12-31 05:57:34', '2017-12-31 05:57:34');
+INSERT INTO `clients` (`id`, `names`, `contact`, `email`, `password`, `remember_token`, `secret_key`, `created_at`, `updated_at`) VALUES
+(1, 'kamal', '+6281573223098', 'kamalmlzka@gmail.com', '$2y$10$L1dXuHN.vUZpBxXlAUYCHOfc3yn5jrxvfFwH3GSbFGHvgeBiRJuPK', 'HCAGdOGYMsfYZlxWtZURsxghNm1EWH1mSVZEVdKX99WLTKha1oX7GyaN3fbq', 'ojvpd719c0KVd5RBydZ5z9ruUlkKGW', '2022-12-08 00:41:13', '2022-12-08 00:41:13'),
+(2, 'iqnaz', '+6285224536870', 'iqnaznadhif@gmail.com', '$2y$10$j9IkTBJtm7WG0JXDOridcedqhb.AjBb0IHmEJP6khHpzoMGk7SnUC', NULL, 'V5xEgOOhLnpMQXyIL2Yq8hyy6kPnkt', '2022-12-08 00:41:30', '2022-12-08 00:41:30'),
+(3, 'zaidan', '+6281222750472', 'zaidanrafif@gmail.com', '$2y$10$piKO2vZfgiKxVVhaGsrhx.h9p1sMaDtKGH7zqRuyKqyMlyP.MH7o.', 'n1wMOktTVXZnxVDlqfV4RHUfVxhvlklqB4Gt1IiXgirgaQ1TgiUbZ8MxJV0Z', 'OZ9ZJexxLH6R1leae4xtKf4UXCWD4r', '2022-12-08 00:42:48', '2022-12-08 00:42:48'),
+(4, 'evan', '+6281388266627', 'rizkypanjer@gmail.com', '$2y$10$0qSuJGlod69Kgcr38ENIfe78v9onlZsJzZB5XhvKcHkfQr6IjPtBK', NULL, 'nZcvoJoAQ7Ysxwxz6i5dda4tPIyBbb', '2022-12-08 00:43:25', '2022-12-08 00:43:25'),
+(5, 'arya', '+6282130364139', 'aryasatama@gmail.com', '$2y$10$Q7TjSrglOBSeU1WHdjnR/eUNzL3WDo8961kpYvVyycVE20uGLBVOK', NULL, 'HHDXfvt0IXOCewR6TJqlrOdM3J9UoV', '2022-12-08 00:43:58', '2022-12-08 00:43:58');
 
 -- --------------------------------------------------------
 
@@ -78,9 +83,9 @@ INSERT INTO `clients` (`id`, `names`, `contact`, `email`, `password`, `remember_
 
 CREATE TABLE `helps` (
   `id` int(10) UNSIGNED NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `title` varchar(191) NOT NULL,
+  `message` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -90,8 +95,8 @@ CREATE TABLE `helps` (
 --
 
 INSERT INTO `helps` (`id`, `email`, `title`, `message`, `created_at`, `updated_at`) VALUES
-(1, 'vinukoech@gmail.com', 'Deposit error', 'I deposited my money 12 usd but my account does not reflect it', '2017-12-31 08:17:25', '2017-12-31 08:17:25'),
-(2, 'vyrosoft@gmail.com', 'Incorrect amount', 'Deposited incorrect amount to my acount', '2017-12-31 08:41:55', '2017-12-31 08:41:55');
+(1, 'kamalmlzka@gmail.com', 'Deposit error', 'I deposited my money 12 usd but my account does not reflect it', '2017-12-31 08:17:25', '2017-12-31 08:17:25'),
+(2, 'iqnaznadhif@gmail.com', 'Incorrect amount', 'Deposited incorrect amount to my acount', '2017-12-31 08:41:55', '2017-12-31 08:41:55');
 
 -- --------------------------------------------------------
 
@@ -101,7 +106,7 @@ INSERT INTO `helps` (`id`, `email`, `title`, `message`, `created_at`, `updated_a
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(191) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -124,8 +129,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `token` varchar(191) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -137,16 +142,16 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `transactions` (
   `id` int(10) UNSIGNED NOT NULL,
-  `trans_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `trans_id` varchar(191) NOT NULL,
   `client_id` int(11) NOT NULL,
-  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(191) NOT NULL,
   `amount` double NOT NULL,
-  `currency` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `currency` varchar(191) NOT NULL,
   `fee` double NOT NULL,
-  `sender` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `receiver` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sender` varchar(191) NOT NULL,
+  `receiver` varchar(191) NOT NULL,
+  `status` varchar(191) NOT NULL,
+  `description` varchar(191) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -156,10 +161,10 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`id`, `trans_id`, `client_id`, `type`, `amount`, `currency`, `fee`, `sender`, `receiver`, `status`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'ch_1Beu6oASBN7os99X9aYkJidN', 3, 'card', 2400, 'usd', 0, 'Vincent Chacha', 'Ibuild Technologies', 'completed', 'Card Deposit to My-Wallet', '2017-12-30 20:51:22', '2017-12-30 20:51:22'),
-(2, '2ncylSetRmSNbIB', 3, 'send', 8.23, 'usd', 0, 'Vincent Koech', 'Edison Koech', 'completed', 'Fee payment', '2017-12-31 11:00:20', '2017-12-31 11:00:20'),
-(3, 'dO9Vg4fCaEDhSHn', 4, 'send', 54.34, 'usd', 0, 'Edison Koech', 'Vincent Koech', 'completed', 'repay loans', '2017-12-31 11:03:22', '2017-12-31 11:03:22'),
-(4, 'nEh4iYoGNhd6N2K', 3, 'send', 55.9, 'usd', 0, 'Vincent Koech', 'Edison Koech', 'completed', 'fees', '2017-12-31 17:03:54', '2017-12-31 17:03:54');
+(1, 'ch_1Beu6oASBN7os99X9aYkJidN', 3, 'card', 2400, 'usd', 0, 'admin', 'Kelompok WhyPhi', 'completed', 'Card Deposit to My-Wallet', '2017-12-30 20:51:22', '2017-12-30 20:51:22'),
+(2, '2ncylSetRmSNbIB', 3, 'send', 8.23, 'usd', 0, 'kamal', 'iqnaz', 'completed', 'Fee payment', '2017-12-31 11:00:20', '2017-12-31 11:00:20'),
+(3, 'dO9Vg4fCaEDhSHn', 4, 'send', 54.34, 'usd', 0, 'iqnaz', 'kamal', 'completed', 'repay loans', '2017-12-31 11:03:22', '2017-12-31 11:03:22'),
+(4, 'nEh4iYoGNhd6N2K', 3, 'send', 55.9, 'usd', 0, 'kamal', 'iqnaz', 'completed', 'fees', '2017-12-31 17:03:54', '2017-12-31 17:03:54');
 
 -- --------------------------------------------------------
 
@@ -169,10 +174,10 @@ INSERT INTO `transactions` (`id`, `trans_id`, `client_id`, `type`, `amount`, `cu
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(191) NOT NULL,
+  `email` varchar(191) NOT NULL,
+  `password` varchar(191) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -182,7 +187,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'vincent koech', 'vinukoech@gmail.com', '$2y$10$UlMqZJ3AzDRxveKHmZ19H.beCtK2lsNGtjdpTMxb4C807IkuVD9v6', '4Du2m27n36MgtKWnP7ZCoyCPFcrHzMBfYtqLIdmpazKIlDvRnF0Je49pFeVN', '2017-12-31 16:45:08', '2017-12-31 16:45:08');
+(1, 'admin', 'admin@gmail.com', '$2y$10$L1dXuHN.vUZpBxXlAUYCHOfc3yn5jrxvfFwH3GSbFGHvgeBiRJuPK', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -240,13 +245,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `helps`
@@ -270,7 +275,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
