@@ -1,6 +1,6 @@
 <h1 align="center">Selamat datang di E - Wallet 👋</h1>
 
-## Apa itu Sistem Informasi Akademik Sekolah?
+## Apa itu E - Wallet?
 
 Web E - Wallet  yang dibuat oleh <a href="https://github.com/prosoxwb"> Kelompok WhyPhi </a>. **E - Wallet adalah Website untuk para mahasiswa dapat melihat jumlah saldo, dan mengirim uang dengan mudah melalui website.**
 
@@ -20,7 +20,7 @@ Web E - Wallet  yang dibuat oleh <a href="https://github.com/prosoxwb"> Kelompok
 
 **Release date : 1 Desember 2022**
 
-> E - Wallet merupakan project open source yang dibuat oleh Adhi Ariyadi. Kalian dapat download/fork/clone. Cukup beri stars di project ini agar memberiku semangat. Terima kasih!
+> E - Wallet merupakan project open source yang dibuat oleh Kelompok WhyPhi. Kalian dapat download/fork/clone. Cukup beri stars di project ini agar memberiku semangat. Terima kasih!
 
 ---
 
