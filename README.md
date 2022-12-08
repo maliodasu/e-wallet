@@ -4,7 +4,7 @@
 
 Web E - Wallet  yang dibuat oleh <a href="https://github.com/prosoxwb"> Kelompok WhyPhi </a>. **E - Wallet adalah Website untuk para mahasiswa dapat melihat jumlah saldo, dan mengirim uang dengan mudah melalui website.**
 
-## Fitur apa saja yang tersedia di Sistem Informasi Akademik Sekolah?
+## Fitur apa saja yang tersedia di E - Wallet?
 
 - Register
 - Login
